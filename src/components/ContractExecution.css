@@ -1,0 +1,85 @@
+.contracts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contracts .card-title {
+  align-self: flex-start;
+}
+
+.donut-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 10px 0 20px;
+}
+
+.donut {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.donut-segment {
+  transition: stroke-dasharray 1s ease;
+  animation: donutIn 1s ease forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes donutIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.donut-value {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.donut-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.contract-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.contract-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contract-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contract-legend-label {
+  font-size: 15px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.contract-legend-value {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}

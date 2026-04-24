@@ -1,0 +1,77 @@
+.table-section {
+  overflow: hidden;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.proc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.proc-table th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.proc-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.proc-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.proc-table tbody tr:hover {
+  background: var(--bg-primary);
+}
+
+.cell-customer {
+  font-weight: 600;
+}
+
+.cell-center {
+  text-align: center;
+}
+
+.status-badge {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.status-badge.status-green {
+  color: var(--green);
+  background: var(--green-bg);
+}
+
+.status-badge.status-yellow {
+  color: var(--yellow);
+  background: var(--yellow-bg);
+}
+
+.status-badge.status-red {
+  color: var(--red);
+  background: var(--red-bg);
+}
+
+.risk-tag {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.risk-tag-green { color: var(--green); }
+.risk-tag-yellow { color: var(--yellow); }
+.risk-tag-red { color: var(--red); }

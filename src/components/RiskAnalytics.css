@@ -1,0 +1,88 @@
+.risk {
+  display: flex;
+  flex-direction: column;
+}
+
+.risk .card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.risk-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--red);
+  background: var(--red-bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.risk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.risk-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: var(--risk-bg);
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease;
+}
+
+.risk-item:hover {
+  transform: scale(1.01);
+}
+
+.risk-indicator {
+  flex-shrink: 0;
+}
+
+.risk-dot {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.risk-info {
+  flex: 1;
+}
+
+.risk-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.risk-sublabel {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.risk-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.risk-legend {
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+
+.legend-item {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
