@@ -1,6 +1,7 @@
 .app {
   min-height: 100vh;
   padding-bottom: 60px;
+  font-size: calc(16px * var(--font-scale));
 }
 
 .main {
@@ -22,6 +23,9 @@
   .grid-two {
     grid-template-columns: 1fr;
   }
+  .main {
+    padding: 0 16px;
+  }
 }
 
 .card {
@@ -29,7 +33,7 @@
   border-radius: var(--radius);
   padding: 28px;
   box-shadow: var(--shadow);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.4s ease;
 }
 
 .card:hover {
@@ -38,7 +42,7 @@
 }
 
 .card-title {
-  font-size: 15px;
+  font-size: calc(15px * var(--font-scale));
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;

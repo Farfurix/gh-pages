@@ -10,7 +10,7 @@
 }
 
 .kpi-label {
-  font-size: 15px;
+  font-size: calc(14px * var(--font-scale));
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 8px;
@@ -24,14 +24,14 @@
 }
 
 .kpi-number {
-  font-size: 42px;
+  font-size: calc(36px * var(--font-scale));
   font-weight: 700;
   letter-spacing: -1px;
   color: var(--text-primary);
 }
 
 .kpi-unit {
-  font-size: 18px;
+  font-size: calc(16px * var(--font-scale));
   font-weight: 500;
   color: var(--text-secondary);
 }
@@ -66,9 +66,16 @@
 
 @media (max-width: 500px) {
   .kpi-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .kpi-number {
-    font-size: 28px;
+    font-size: calc(24px * var(--font-scale));
+  }
+  .kpi-unit {
+    font-size: calc(13px * var(--font-scale));
+  }
+  .card {
+    padding: 16px;
   }
 }

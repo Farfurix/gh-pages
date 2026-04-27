@@ -4,27 +4,30 @@
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .proc-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: calc(14px * var(--font-scale));
+  min-width: 480px;
 }
 
 .proc-table th {
   text-align: left;
-  font-size: 13px;
+  font-size: calc(12px * var(--font-scale));
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text-secondary);
   padding: 8px 12px;
   border-bottom: 1px solid var(--border);
+  white-space: nowrap;
 }
 
 .proc-table td {
-  padding: 12px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--bg-primary);
   color: var(--text-primary);
 }
@@ -46,10 +49,11 @@
 }
 
 .status-badge {
-  font-size: 14px;
+  font-size: calc(13px * var(--font-scale));
   font-weight: 500;
   padding: 4px 12px;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
 .status-badge.status-green {
@@ -68,10 +72,20 @@
 }
 
 .risk-tag {
-  font-size: 14px;
+  font-size: calc(13px * var(--font-scale));
   font-weight: 600;
 }
 
 .risk-tag-green { color: var(--green); }
 .risk-tag-yellow { color: var(--yellow); }
 .risk-tag-red { color: var(--red); }
+
+@media (max-width: 600px) {
+  .proc-table {
+    font-size: calc(12px * var(--font-scale));
+  }
+  .proc-table th,
+  .proc-table td {
+    padding: 8px 8px;
+  }
+}
