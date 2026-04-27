@@ -22,12 +22,7 @@
 }
 
 .donut-segment {
-  transition: stroke-dasharray 0.8s ease;
-  transition-delay: var(--delay);
-}
-
-.reveal:not(.visible) .donut-segment {
-  stroke-dasharray: 0 314 !important;
+  /* static — no animation */
 }
 
 .donut-center {
