@@ -155,11 +155,12 @@ export default function Header({
 
           {/* Font size toggle */}
           <button
-            className={`font-toggle ${largeFont ? 'active' : ''}`}
+            className="font-toggle"
             onClick={() => setLargeFont((f) => !f)}
             aria-label="Размер шрифта"
           >
-            аА
+            <span className={`font-letter ${!largeFont ? 'font-letter-active' : ''}`}>а</span>
+            <span className={`font-letter ${largeFont ? 'font-letter-active' : ''}`}>А</span>
           </button>
 
           {/* Theme toggle */}

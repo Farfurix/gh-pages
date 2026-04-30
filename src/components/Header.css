@@ -243,26 +243,25 @@
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--bg-card);
-  color: var(--text-secondary);
   font-size: 14px;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s, background-color 0.4s ease;
+  transition: background-color 0.4s ease;
   flex-shrink: 0;
   letter-spacing: -1px;
   font-family: inherit;
+  gap: 0;
 }
 
-.font-toggle.active {
-  color: var(--accent-blue);
-  border-color: var(--accent-blue);
+.font-letter {
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
-.font-toggle:hover {
-  border-color: var(--accent-blue);
+.font-letter-active {
   color: var(--accent-blue);
 }
 

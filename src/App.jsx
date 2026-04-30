@@ -39,7 +39,7 @@ function App() {
               <FinancialFlows data={region.financial} />
               <RiskAnalytics data={region.risks} />
             </div>
-            <div className="grid-two">
+            <div className="grid-two grid-wide-right">
               <ContractExecution data={region.contracts} />
               <ProcurementTable data={region.procurements} />
             </div>
