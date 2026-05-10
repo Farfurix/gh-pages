@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import KpiCards from './components/KpiCards'
 import FinancialFlows from './components/FinancialFlows'
 import RiskAnalytics from './components/RiskAnalytics'
@@ -46,6 +47,7 @@ function App() {
           </>
         )}
       </main>
+      <Footer />
     </div>
   )
 }

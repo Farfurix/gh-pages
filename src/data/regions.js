@@ -2,7 +2,7 @@ const regionsData = {
   'zaporozhskaya': {
     name: 'Запорожская область',
     kpi: {
-      volume: { value: '12,4', unit: 'трлн ₽', bar: 60 },
+      volume: { value: '42,6', unit: 'млрд ₽', bar: 60 },
       procedures: { value: '3,2', unit: 'млн', bar: 70 },
       avgParticipants: { value: '2,2', unit: '', bar: 80 },
       singleSupplier: { value: '22', unit: '%', bar: 90 },
@@ -67,6 +67,41 @@ const regionsData = {
       { customer: 'Мосгортранс', price: '12,1 млрд ₽', participants: 4, status: 'Исполнение', risk: 'green' },
       { customer: 'ДКС г. Москвы', price: '8,9 млрд ₽', participants: 3, status: 'Исполнение', risk: 'yellow' },
       { customer: 'ДТСЗН', price: '2,1 млрд ₽', participants: 6, status: 'Завершён', risk: 'green' },
+    ],
+  },
+  'spb': {
+    name: 'Санкт-Петербург',
+    kpi: {
+      volume: { value: '1,4', unit: 'трлн ₽', bar: 85 },
+      procedures: { value: '189', unit: 'тыс.', bar: 82 },
+      avgParticipants: { value: '3,7', unit: '', bar: 88 },
+      singleSupplier: { value: '12', unit: '%', bar: 40 },
+    },
+    financial: {
+      stages: [
+        { label: 'Планирование', value: 1.62, unit: 'трлн' },
+        { label: 'Контракты', value: 1.4, unit: 'трлн' },
+        { label: 'Исполнение', value: 1.26, unit: 'трлн' },
+        { label: 'Оплата', value: 1.18, unit: 'трлн' },
+      ],
+      lossPercent: 27,
+    },
+    risks: [
+      { label: 'Низкая конкуренция', value: 12, sublabel: 'закупок', level: 'green' },
+      { label: 'Демпинг цен', value: 9, sublabel: 'процедур', level: 'green' },
+      { label: 'Проблемы исполнения', value: 6, sublabel: 'контрактов', level: 'green' },
+    ],
+    contracts: {
+      onTime: 84,
+      violations: 11,
+      terminated: 5,
+    },
+    procurements: [
+      { customer: 'Комздрав СПб', price: '9,4 млрд ₽', participants: 5, status: 'Завершён', risk: 'green' },
+      { customer: 'Ком. по образованию', price: '3,8 млрд ₽', participants: 4, status: 'Исполнение', risk: 'green' },
+      { customer: 'Метрополитен', price: '7,2 млрд ₽', participants: 3, status: 'Исполнение', risk: 'yellow' },
+      { customer: 'КРТИ', price: '14,6 млрд ₽', participants: 2, status: 'Исполнение', risk: 'yellow' },
+      { customer: 'Водоканал', price: '4,1 млрд ₽', participants: 6, status: 'Завершён', risk: 'green' },
     ],
   },
   'tula': {

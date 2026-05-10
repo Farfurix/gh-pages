@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script>
+      // SPA redirect for GitHub Pages
+      var segmentCount = 1;
+      var l = window.location;
+      var path = l.pathname.split('/').slice(segmentCount + 1).join('/');
+      var search = l.search;
+      sessionStorage.redirect = l.pathname + search + l.hash;
+      l.replace(l.pathname.split('/').slice(0, segmentCount + 1).join('/') + '/' + (search ? search : ''));
+    </script>
+  </head>
+  <body></body>
+</html>

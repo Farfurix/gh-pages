@@ -1,0 +1,33 @@
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  transition: border-color 0.4s ease;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.footer-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+}

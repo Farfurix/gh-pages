@@ -65,7 +65,7 @@ export default function Header({
   return (
     <header className="header">
       <div className="header-inner">
-        <div className="header-left">
+        <div className="header-top">
           <div className="header-logo">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <rect width="28" height="28" rx="6" fill="#3056ff"/>
@@ -73,102 +73,105 @@ export default function Header({
               <path d="M4 22 L8 14 L12 18 L17 8 L21 12 L24 6 L24 22 Z" fill="#34c759" fillOpacity="0.6"/>
             </svg>
           </div>
-          <h1 className="header-title">Ситуационный центр госзакупок</h1>
+          <h1 className="header-title">Ситуационный центр аналитического сопровождения государственных закупок</h1>
         </div>
 
-        <div className="header-right">
-          {/* Compare toggle */}
-          <label className="toggle-wrap">
-            <input
-              type="checkbox"
-              checked={compareMode}
-              onChange={handleToggleCompare}
-              className="toggle-input"
-            />
-            <span className="toggle-track">
-              <span className="toggle-thumb" />
-            </span>
-            <span className="toggle-label">Сравнение</span>
-          </label>
-
-          {/* Region selector */}
-          <div className="region-selector" ref={dropdownRef}>
-            <button
-              className="region-btn"
-              onClick={() => setDropdownOpen((v) => !v)}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="region-icon">
-                <path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5Zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="currentColor"/>
-              </svg>
-              <span className="region-btn-text">
-                {compareMode
-                  ? compareRegions.length === 0
-                    ? 'Выберите регионы'
-                    : `Выбрано: ${compareRegions.length}`
-                  : currentName}
+        <div className="header-controls">
+          <div className="header-controls-left">
+            {/* Compare toggle */}
+            <label className="toggle-wrap">
+              <input
+                type="checkbox"
+                checked={compareMode}
+                onChange={handleToggleCompare}
+                className="toggle-input"
+              />
+              <span className="toggle-track">
+                <span className="toggle-thumb" />
               </span>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`chevron ${dropdownOpen ? 'open' : ''}`}>
-                <path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
+              <span className="toggle-label">Сравнение</span>
+            </label>
 
-            {dropdownOpen && (
-              <div className="region-dropdown">
-                {regionKeys.map((key) => {
-                  const isSelected = compareMode
-                    ? compareRegions.includes(key)
-                    : key === activeRegion
-                  return (
-                    <button
-                      key={key}
-                      className={`region-option ${isSelected ? 'selected' : ''}`}
-                      onClick={() => handleRegionClick(key)}
-                    >
-                      {compareMode && (
-                        <span className={`check-box ${isSelected ? 'checked' : ''}`}>
-                          {isSelected && (
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                              <path d="M2 5l2.5 2.5L8 3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          )}
-                        </span>
-                      )}
-                      {regionsData[key].name}
-                      {!compareMode && isSelected && (
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="check-icon">
-                          <path d="M3 7l3 3 5-5" stroke="var(--accent-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
-                    </button>
-                  )
-                })}
-                {compareMode && needsHint && (
-                  <div className="dropdown-hint">Выберите регионы для сравнения</div>
-                )}
-              </div>
-            )}
+            {/* Region selector */}
+            <div className="region-selector" ref={dropdownRef}>
+              <button
+                className="region-btn"
+                onClick={() => setDropdownOpen((v) => !v)}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="region-icon">
+                  <path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5Zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="currentColor"/>
+                </svg>
+                <span className="region-btn-text">
+                  {compareMode
+                    ? compareRegions.length === 0
+                      ? 'Выберите регионы'
+                      : `Выбрано: ${compareRegions.length}`
+                    : currentName}
+                </span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`chevron ${dropdownOpen ? 'open' : ''}`}>
+                  <path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {dropdownOpen && (
+                <div className="region-dropdown">
+                  {regionKeys.map((key) => {
+                    const isSelected = compareMode
+                      ? compareRegions.includes(key)
+                      : key === activeRegion
+                    return (
+                      <button
+                        key={key}
+                        className={`region-option ${isSelected ? 'selected' : ''}`}
+                        onClick={() => handleRegionClick(key)}
+                      >
+                        {compareMode && (
+                          <span className={`check-box ${isSelected ? 'checked' : ''}`}>
+                            {isSelected && (
+                              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                <path d="M2 5l2.5 2.5L8 3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            )}
+                          </span>
+                        )}
+                        {regionsData[key].name}
+                        {!compareMode && isSelected && (
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="check-icon">
+                            <path d="M3 7l3 3 5-5" stroke="var(--accent-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        )}
+                      </button>
+                    )
+                  })}
+                  {compareMode && needsHint && (
+                    <div className="dropdown-hint">Выберите регионы для сравнения</div>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
 
-          <span className="header-date">
-            {new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })}
-          </span>
+          <div className="header-controls-right">
+            <span className="header-date">
+              {new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </span>
 
-          {/* Font size toggle */}
-          <button
-            className="font-toggle"
-            onClick={() => setLargeFont((f) => !f)}
-            aria-label="Размер шрифта"
-          >
-            <span className={`font-letter ${!largeFont ? 'font-letter-active' : ''}`}>а</span>
-            <span className={`font-letter ${largeFont ? 'font-letter-active' : ''}`}>А</span>
-          </button>
+            {/* Font size toggle */}
+            <button
+              className="font-toggle"
+              onClick={() => setLargeFont((f) => !f)}
+              aria-label="Размер шрифта"
+            >
+              <span className={`font-letter ${!largeFont ? 'font-letter-active' : ''}`}>а</span>
+              <span className={`font-letter ${largeFont ? 'font-letter-active' : ''}`}>А</span>
+            </button>
 
-          {/* Theme toggle */}
-          <button
-            className="theme-toggle"
-            onClick={() => setDark((d) => !d)}
-            aria-label="Переключить тему"
-          >
+            {/* Theme toggle */}
+            <button
+              className="theme-toggle"
+              onClick={() => setDark((d) => !d)}
+              aria-label="Переключить тему"
+            >
             {dark ? (
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="4" fill="currentColor"/>
@@ -188,7 +191,8 @@ export default function Header({
                 <path d="M17.39 11.77A7.5 7.5 0 0 1 8.23 2.61a7.5 7.5 0 1 0 9.16 9.16Z" fill="currentColor"/>
               </svg>
             )}
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </header>
