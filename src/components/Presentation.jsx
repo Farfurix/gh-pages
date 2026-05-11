@@ -6,13 +6,15 @@ export default function Presentation() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [dark, setDark] = useState(true)
   const slideRefs = useRef([])
+  const containerRef = useRef(null)
+  const activeSlideRef = useRef(0)
   const totalSlides = 9
 
   /* Dark theme by default; restore on unmount */
   useEffect(() => {
-    const prev = document.documentElement.getAttribute('data-theme')
+    const prev = document.documentElement.getAttribute('data-theme') || 'dark'
     document.documentElement.setAttribute('data-theme', 'dark')
-    return () => document.documentElement.setAttribute('data-theme', prev || 'light')
+    return () => document.documentElement.setAttribute('data-theme', prev)
   }, [])
 
   useEffect(() => {
@@ -27,6 +29,7 @@ export default function Presentation() {
           if (entry.isIntersecting) {
             const idx = Number(entry.target.dataset.idx)
             setActiveSlide(idx)
+            activeSlideRef.current = idx
             const els = entry.target.querySelectorAll('.pr')
             els.forEach((el, i) => {
               setTimeout(() => el.classList.add('pr-visible'), i * 120)
@@ -40,6 +43,27 @@ export default function Presentation() {
     return () => observer.disconnect()
   }, [])
 
+  /* Auto-focus container + arrow key navigation */
+  useEffect(() => {
+    containerRef.current?.focus()
+    function handleKey(e) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault()
+        const next = Math.min(activeSlideRef.current + 1, totalSlides - 1)
+        activeSlideRef.current = next
+        slideRefs.current[next]?.scrollIntoView({ behavior: 'smooth' })
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault()
+        const prev = Math.max(activeSlideRef.current - 1, 0)
+        activeSlideRef.current = prev
+        slideRefs.current[prev]?.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    const el = containerRef.current
+    el?.addEventListener('keydown', handleKey)
+    return () => el?.removeEventListener('keydown', handleKey)
+  }, [])
+
   function scrollTo(i) {
     slideRefs.current[i]?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -47,7 +71,7 @@ export default function Presentation() {
   const ref = (i) => (el) => { slideRefs.current[i] = el }
 
   return (
-    <div className="presentation">
+    <div className="presentation" ref={containerRef} tabIndex={-1}>
       {/* Top bar */}
       <Link to="/" className="pres-back">← Вернуться к дашборду</Link>
 

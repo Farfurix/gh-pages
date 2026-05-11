@@ -38,7 +38,7 @@
 }
 
 .risk-item:hover {
-  transform: scale(1.01);
+  transform: none;
 }
 
 .risk-indicator {

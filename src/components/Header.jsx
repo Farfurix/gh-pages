@@ -12,7 +12,9 @@ export default function Header({
 }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [dark, setDark] = useState(() => {
-    return document.documentElement.getAttribute('data-theme') === 'dark'
+    const saved = document.documentElement.getAttribute('data-theme')
+    if (saved) return saved === 'dark'
+    return true
   })
   const [largeFont, setLargeFont] = useState(false)
   const dropdownRef = useRef(null)
