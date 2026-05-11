@@ -5,6 +5,7 @@ import './Presentation.css'
 export default function Presentation() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [dark, setDark] = useState(true)
+  const [largeFont, setLargeFont] = useState(false)
   const slideRefs = useRef([])
   const containerRef = useRef(null)
   const activeSlideRef = useRef(0)
@@ -71,9 +72,18 @@ export default function Presentation() {
   const ref = (i) => (el) => { slideRefs.current[i] = el }
 
   return (
-    <div className="presentation" ref={containerRef} tabIndex={-1}>
+    <div className="presentation" ref={containerRef} tabIndex={-1} data-font={largeFont ? 'large' : 'normal'}>
       {/* Top bar */}
       <Link to="/" className="pres-back">← Вернуться к дашборду</Link>
+
+      <button
+        className="pres-font-toggle"
+        onClick={() => setLargeFont((f) => !f)}
+        aria-label="Размер шрифта"
+      >
+        <span className={`pres-font-letter ${!largeFont ? 'pres-font-letter-active' : ''}`}>а</span>
+        <span className={`pres-font-letter ${largeFont ? 'pres-font-letter-active' : ''}`}>А</span>
+      </button>
 
       <button className="pres-theme-toggle" onClick={() => setDark((d) => !d)} aria-label="Тема">
         {dark ? (
