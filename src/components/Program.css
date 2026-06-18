@@ -210,6 +210,100 @@
   color: #2c3e50;
 }
 
+/* Key speeches section */
+.program-speeches {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  width: 100%;
+}
+
+.program-speeches h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.speeches-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.speech-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 100px 2fr;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.speech-event {
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.speech-time {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.speech-duration {
+  color: #3498db;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.speech-topic {
+  color: #555;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Protocol notes section */
+.program-notes {
+  background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f2 100%);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+  max-width: 900px;
+  width: 100%;
+}
+
+.program-notes h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.notes-list {
+  list-style-type: disc;
+  padding-left: 25px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.notes-list li {
+  margin-bottom: 12px;
+}
+
+.notes-list li:last-child {
+  margin-bottom: 0;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .program-main {
@@ -239,5 +333,20 @@
   .program-place,
   .program-desc {
     white-space: normal;
+  }
+
+  .speech-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .program-speeches,
+  .program-notes {
+    padding: 20px;
+  }
+
+  .program-speeches h2,
+  .program-notes h2 {
+    font-size: 1.3rem;
   }
 }
