@@ -9,6 +9,7 @@ export default function Header({
   setCompareMode,
   compareRegions,
   setCompareRegions,
+  simple = false,
 }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [dark, setDark] = useState(() => {
@@ -59,6 +60,25 @@ export default function Header({
       }
       setCompareRegions([])
     }
+  }
+
+  if (simple) {
+    return (
+      <header className="header header-simple">
+        <div className="header-inner">
+          <div className="header-top">
+            <div className="header-logo">
+              <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
+                <rect width="60" height="60" rx="12" fill="#e74c3c"/>
+                <circle cx="30" cy="20" r="8" fill="#fff"/>
+                <path d="M15 45 Q30 35 45 45" stroke="#fff" strokeWidth="3" fill="none" strokeLinecap="round"/>
+              </svg>
+            </div>
+            <h1 className="header-title header-title-simple">Форум Россия-Китай</h1>
+          </div>
+        </div>
+      </header>
+    )
   }
 
   const currentName = regionsData[activeRegion].name

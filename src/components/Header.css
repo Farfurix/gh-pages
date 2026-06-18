@@ -10,6 +10,19 @@
   transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
+/* Simple header for Forum and Invitation pages */
+.header-simple {
+  margin-bottom: 0;
+  border-bottom: 2px solid #3498db;
+}
+
+.header-title-simple {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3498db;
+  letter-spacing: 0.05em;
+}
+
 .header-inner {
   max-width: 1280px;
   margin: 0 auto;

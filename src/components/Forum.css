@@ -1,0 +1,132 @@
+.forum {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  position: relative;
+}
+
+.forum-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  min-height: calc(100vh - 140px);
+  position: relative;
+}
+
+/* Remove ornament completely */
+
+.forum-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.forum-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.forum-subtitle {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #34495e;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.forum-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.forum-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #3498db;
+  background: white;
+  color: #3498db;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.forum-btn:hover {
+  background: #3498db;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.forum-btn-primary {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+  border-color: #3498db;
+}
+
+.forum-btn-primary:hover {
+  background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+  border-color: #2980b9;
+}
+
+.forum-btn-secondary {
+  background: #fff;
+  color: #2c3e50;
+  border-color: #3498db;
+}
+
+.forum-btn-secondary:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+.btn-text {
+  letter-spacing: 0.02em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .forum-title {
+    font-size: 2.5rem;
+  }
+
+  .forum-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .forum-main {
+    padding: 2rem 1rem;
+  }
+
+  .forum-buttons {
+    max-width: 100%;
+  }
+}

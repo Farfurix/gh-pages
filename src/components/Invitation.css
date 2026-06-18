@@ -1,0 +1,313 @@
+.invitation {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fafbfc 0%, #f0f2f5 100%);
+  position: relative;
+}
+
+.invitation-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 2rem 3rem;
+  min-height: calc(100vh - 140px);
+  position: relative;
+}
+
+.back-button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background: #3498db;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Remove ornament completely */
+
+.invitation-container {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.invitation-content {
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease 0.4s both;
+}
+
+.invitation-paper {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e1e8ed;
+}
+
+.paper-header {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.forum-title-small {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.05em;
+}
+
+.forum-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.organizer {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.document-number {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.document-number p {
+  font-size: 0.85rem;
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+}
+
+.document-number p:last-child {
+  margin-bottom: 0;
+}
+
+.paper-body {
+  padding: 3rem;
+}
+
+.recipient-block {
+  text-align: right;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 3px solid #3498db;
+}
+
+.recipient-title {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin: 0 0 0.75rem 0;
+}
+
+.recipient {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.5;
+}
+
+.recipient-excellency {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0.5rem 0 0.25rem 0;
+  font-style: italic;
+}
+
+.recipient-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.salutation-block {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.salutation {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.main-text {
+  margin-bottom: 2rem;
+}
+
+.invitation-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.delegation-block {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-left: 3px solid #e74c3c;
+}
+
+.delegation-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.delegation-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #34495e;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.delegation-list li {
+  margin-bottom: 0.75rem;
+}
+
+.delegation-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-block {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 3px solid #3498db;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin: 0;
+  text-align: center;
+}
+
+.contact-text strong {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.signature-block {
+  text-align: left;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #ecf0f1;
+}
+
+.signature-closing {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.signature-title {
+  font-size: 1rem;
+  color: #34495e;
+  margin: 0 0 0.25rem 0;
+}
+
+.signature-forum {
+  font-size: 0.95rem;
+  color: #5d6d7e;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invitation-main {
+    padding: 2rem 1rem;
+  }
+
+  .paper-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header-right {
+    text-align: left;
+    width: 100%;
+  }
+
+  .forum-name {
+    font-size: 1.1rem;
+  }
+
+  .paper-body {
+    padding: 2rem 1.5rem;
+  }
+
+  .invitation-text {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .recipient-block {
+    text-align: left;
+  }
+}

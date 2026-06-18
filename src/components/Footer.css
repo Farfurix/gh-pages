@@ -31,3 +31,15 @@
 .footer-link:hover {
   opacity: 0.7;
 }
+
+/* Simple footer for Forum and Invitation pages */
+.footer-simple {
+  background: #f8f9fa;
+  border-top: 2px solid #3498db;
+  margin-top: auto;
+}
+
+.footer-text-simple {
+  color: #5d6d7e;
+  font-size: 0.9rem;
+}

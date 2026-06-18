@@ -1,0 +1,243 @@
+.program-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  position: relative;
+}
+
+.program-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.back-button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background: #3498db;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.protocol-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Times New Roman", serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.protocol-title p {
+  margin-bottom: 5px;
+}
+
+.protocol-title .caps {
+  text-transform: uppercase;
+}
+
+.program-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.program-section-top {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.program-section {
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.program-section h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.program-section p {
+  color: #555;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.goals-list,
+.protocol-list {
+  list-style: none;
+  padding: 0;
+}
+
+.goals-list li,
+.protocol-list li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.goals-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.protocol-list li:before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.program-day {
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.program-day h3 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.program-day h4 {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.program-table {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.program-row {
+  display: grid;
+  grid-template-columns: 180px 220px 1fr;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.program-row:hover {
+  background: #e8f4f8;
+  transform: translateX(5px);
+}
+
+.program-row.highlight {
+  border-left-color: #3498db;
+  background: #e8f4f8;
+}
+
+.program-row.highlight:hover {
+  background: #d0e9f3;
+}
+
+.program-time {
+  font-weight: 600;
+  color: #3498db;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.program-row.highlight .program-time {
+  color: #2c3e50;
+}
+
+.program-place {
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.program-desc {
+  color: #555;
+  line-height: 1.6;
+}
+
+.program-desc strong {
+  color: #2c3e50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .program-main {
+    padding: 40px 15px 30px;
+  }
+
+  .program-title {
+    font-size: 1.8rem;
+  }
+
+  .program-subtitle {
+    font-size: 1rem;
+  }
+
+  .program-section,
+  .program-day {
+    padding: 20px;
+  }
+
+  .program-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .program-time,
+  .program-place,
+  .program-desc {
+    white-space: normal;
+  }
+}
