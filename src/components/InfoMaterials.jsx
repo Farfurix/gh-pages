@@ -177,12 +177,12 @@ const InfoMaterials = () => {
             </div>
             <div className="menu-category">
               <h4>Горячие блюда</h4>
-              <ol>
+              <ul>
                 <li>Утка по-пекински</li>
                 <li>Курица Гунбао</li>
                 <li>Говядина по-сычуаньски</li>
                 <li>Рыба на пару с имбирем и зеленым луком</li>
-              </ol>
+              </ul>
             </div>
             <div className="menu-category">
               <h4>Суп</h4>
@@ -227,12 +227,12 @@ const InfoMaterials = () => {
             </div>
             <div className="menu-category">
               <h4>Горячие блюда</h4>
-              <ol>
+              <ul>
                 <li>Тушеная говядина в томатном соусе</li>
                 <li>Свинина хуншао</li>
                 <li>Тофу с грибами шиитаке</li>
                 <li>Морской окунь на пару</li>
-              </ol>
+              </ul>
             </div>
             <div className="menu-category">
               <h4>Суп</h4>
