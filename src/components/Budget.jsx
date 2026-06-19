@@ -9,7 +9,9 @@ const Budget = () => {
     <div className="budget-page">
       <Header simple />
       <main className="budget-main">
-        <Link to="/forum" className="back-button">← Назад</Link>
+        <div className="top-controls">
+          <Link to="/forum" className="back-button">← Назад</Link>
+        </div>
         <h1 className="budget-title">СМЕТА РАСХОДОВ</h1>
         <p className="budget-subtitle">на организацию визита Чрезвычайного и Полномочного Посла Китайской Народной Республики в Российской Федерации для участия в Международном форуме «РОСТКИ–2026»</p>
 
@@ -21,7 +23,7 @@ const Budget = () => {
 
         <div className="budget-content">
           {/* Section I */}
-          <div className="budget-section">
+          <div className="budget-section" id="section-i">
             <h2>I. РАЗМЕЩЕНИЕ</h2>
             <div className="budget-table">
               <div className="budget-row">
@@ -76,7 +78,7 @@ const Budget = () => {
           </div>
 
           {/* Section II */}
-          <div className="budget-section">
+          <div className="budget-section" id="section-ii">
             <h2>II. ТРАНСПОРТНОЕ ОБЕСПЕЧЕНИЕ</h2>
             <div className="budget-table">
               <div className="budget-row">
@@ -131,7 +133,7 @@ const Budget = () => {
           </div>
 
           {/* Section III */}
-          <div className="budget-section">
+          <div className="budget-section" id="section-iii">
             <h2>III. VIP-ОБСЛУЖИВАНИЕ В АЭРОПОРТУ</h2>
             <div className="budget-table">
               <div className="budget-row">
@@ -170,7 +172,7 @@ const Budget = () => {
           </div>
 
           {/* Section IV */}
-          <div className="budget-section">
+          <div className="budget-section" id="section-iv">
             <h2>IV. ПРОТОКОЛЬНОЕ СОПРОВОЖДЕНИЕ</h2>
             <div className="budget-table">
               <div className="budget-row">
@@ -205,7 +207,7 @@ const Budget = () => {
           </div>
 
           {/* Section V */}
-          <div className="budget-section">
+          <div className="budget-section" id="section-v">
             <h2>V. ПЕРЕВОДЧЕСКОЕ ОБЕСПЕЧЕНИЕ</h2>
             <div className="budget-table">
               <div className="budget-row">
@@ -240,7 +242,7 @@ const Budget = () => {
           </div>
 
           {/* Section VI */}
-          <div className="budget-section">
+          <div className="budget-section" id="section-vi">
             <h2>VI. ПИТАНИЕ</h2>
             <div className="budget-table">
               <div className="budget-row">

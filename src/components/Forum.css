@@ -2,8 +2,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  background: var(--bg-primary);
   position: relative;
+  font-size: inherit;
 }
 
 .forum-main {
@@ -27,22 +28,22 @@
 }
 
 .forum-title {
-  font-size: 4rem;
+  font-size: calc(4rem * var(--font-scale));
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0 0 1rem 0;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .forum-subtitle {
-  font-size: 1.75rem;
+  font-size: calc(1.75rem * var(--font-scale));
   font-weight: 400;
-  color: #34495e;
+  color: var(--text-secondary);
   margin: 0;
   letter-spacing: 0.05em;
 }
@@ -63,45 +64,45 @@
   justify-content: center;
   gap: 1rem;
   padding: 1.25rem 2rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: calc(1.1rem * var(--font-scale));
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid #3498db;
-  background: white;
-  color: #3498db;
+  border: 2px solid var(--accent-blue);
+  background: var(--bg-card);
+  color: var(--accent-blue);
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .forum-btn:hover {
-  background: #3498db;
-  color: white;
+  background: var(--accent-blue);
+  color: var(--bg-card);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+  box-shadow: var(--shadow-hover);
 }
 
 .forum-btn-primary {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fff;
-  border-color: #3498db;
+  background: var(--accent-blue);
+  color: var(--bg-card);
+  border-color: var(--accent-blue);
 }
 
 .forum-btn-primary:hover {
-  background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
-  border-color: #2980b9;
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
 }
 
 .forum-btn-secondary {
-  background: #fff;
-  color: #2c3e50;
-  border-color: #3498db;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--accent-blue);
 }
 
 .forum-btn-secondary:hover {
-  background: #3498db;
-  color: #fff;
+  background: var(--accent-blue);
+  color: var(--bg-card);
 }
 
 .btn-icon {

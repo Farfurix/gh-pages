@@ -34,12 +34,29 @@
 
 /* Simple footer for Forum and Invitation pages */
 .footer-simple {
-  background: #f8f9fa;
-  border-top: 2px solid #3498db;
+  background: var(--bg-primary);
+  border-top: 2px solid var(--accent-blue);
   margin-top: auto;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.footer-inner.footer-simple {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-text-simple {
-  color: #5d6d7e;
+  color: var(--text-secondary);
   font-size: 0.9rem;
+  margin-bottom: 8px;
+  transition: color 0.4s ease;
+}
+
+.footer-authors {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+  font-style: italic;
+  transition: color 0.4s ease;
 }

@@ -2,8 +2,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #fafbfc 0%, #f0f2f5 100%);
+  background: var(--bg-primary);
   position: relative;
+  font-size: inherit;
 }
 
 .invitation-main {
@@ -15,31 +16,41 @@
   padding: 2rem 2rem 3rem;
   min-height: calc(100vh - 140px);
   position: relative;
+  padding-top: 180px;
+  padding-left: 240px;
+}
+
+.top-controls {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .back-button {
-  align-self: flex-start;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  background: white;
-  color: #3498db;
-  border: 2px solid #3498db;
+  padding: 10px 18px;
+  background: var(--bg-card);
+  color: var(--accent-blue);
+  border: 2px solid var(--accent-blue);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: calc(0.95rem * var(--font-scale));
   transition: all 0.3s ease;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .back-button:hover {
-  background: #3498db;
-  color: white;
+  background: var(--accent-blue);
+  color: var(--bg-card);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Remove ornament completely */
@@ -57,15 +68,15 @@
 }
 
 .invitation-paper {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   overflow: hidden;
-  border: 1px solid #e1e8ed;
+  border: 1px solid var(--border);
 }
 
 .paper-header {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background: var(--accent-blue);
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -83,23 +94,23 @@
 }
 
 .forum-title-small {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--font-scale));
   font-weight: 600;
-  color: #fff;
+  color: var(--bg-card);
   margin: 0 0 0.5rem 0;
   letter-spacing: 0.05em;
 }
 
 .forum-name {
-  font-size: 1.3rem;
+  font-size: calc(1.3rem * var(--font-scale));
   font-weight: 700;
-  color: #fff;
+  color: var(--bg-card);
   margin: 0 0 0.5rem 0;
   line-height: 1.4;
 }
 
 .organizer {
-  font-size: 0.9rem;
+  font-size: calc(0.9rem * var(--font-scale));
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
@@ -107,15 +118,15 @@
 }
 
 .document-number {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   padding: 0.75rem 1rem;
   border-radius: 8px;
   backdrop-filter: blur(10px);
 }
 
 .document-number p {
-  font-size: 0.85rem;
-  color: #fff;
+  font-size: calc(0.85rem * var(--font-scale));
+  color: var(--bg-card);
   margin: 0 0 0.25rem 0;
   font-weight: 500;
 }
@@ -132,36 +143,36 @@
   text-align: right;
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border-left: 3px solid #3498db;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-blue);
 }
 
 .recipient-title {
-  font-size: 0.9rem;
-  color: #7f8c8d;
+  font-size: calc(0.9rem * var(--font-scale));
+  color: var(--text-secondary);
   font-style: italic;
   margin: 0 0 0.75rem 0;
 }
 
 .recipient {
-  font-size: 1rem;
-  color: #2c3e50;
+  font-size: calc(1rem * var(--font-scale));
+  color: var(--text-primary);
   margin: 0 0 0.25rem 0;
   line-height: 1.5;
 }
 
 .recipient-excellency {
-  font-size: 1rem;
-  color: #2c3e50;
+  font-size: calc(1rem * var(--font-scale));
+  color: var(--text-primary);
   margin: 0.5rem 0 0.25rem 0;
   font-style: italic;
 }
 
 .recipient-name {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--font-scale));
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0;
 }
 
@@ -172,9 +183,9 @@
 }
 
 .salutation {
-  font-size: 1.15rem;
+  font-size: calc(1.15rem * var(--font-scale));
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0;
 }
 
@@ -183,33 +194,33 @@
 }
 
 .invitation-text {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--font-scale));
   line-height: 1.8;
-  color: #34495e;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   text-align: justify;
 }
 
 .delegation-block {
-  background: #f8f9fa;
-  border-radius: 12px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
   padding: 1.5rem;
   margin: 2rem 0;
-  border-left: 3px solid #e74c3c;
+  border-left: 3px solid var(--red);
 }
 
 .delegation-title {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--font-scale));
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0 0 1rem 0;
 }
 
 .delegation-list {
   margin: 0;
   padding-left: 1.5rem;
-  color: #34495e;
-  font-size: 1rem;
+  color: var(--text-primary);
+  font-size: calc(1rem * var(--font-scale));
   line-height: 1.7;
 }
 
@@ -222,22 +233,22 @@
 }
 
 .contact-block {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
   padding: 1.5rem;
-  border-left: 3px solid #3498db;
+  border-left: 3px solid var(--accent-blue);
 }
 
 .contact-text {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--font-scale));
   line-height: 1.7;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0;
   text-align: center;
 }
 
 .contact-text strong {
-  color: #3498db;
+  color: var(--accent-blue);
   font-weight: 600;
 }
 
@@ -245,25 +256,25 @@
   text-align: left;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 2px solid #ecf0f1;
+  border-top: 2px solid var(--border);
 }
 
 .signature-closing {
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--font-scale));
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin: 0 0 0.5rem 0;
 }
 
 .signature-title {
-  font-size: 1rem;
-  color: #34495e;
+  font-size: calc(1rem * var(--font-scale));
+  color: var(--text-primary);
   margin: 0 0 0.25rem 0;
 }
 
 .signature-forum {
-  font-size: 0.95rem;
-  color: #5d6d7e;
+  font-size: calc(0.95rem * var(--font-scale));
+  color: var(--text-secondary);
   margin: 0;
   font-style: italic;
 }

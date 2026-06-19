@@ -35,7 +35,7 @@ export default function Forum() {
           </Link>
         </div>
       </main>
-      <Footer simple />
+      <Footer simple showAuthors />
     </div>
   )
 }

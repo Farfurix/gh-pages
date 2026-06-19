@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import PageNavigation from './PageNavigation';
 import './Program.css';
 
 const Program = () => {
@@ -9,7 +10,16 @@ const Program = () => {
     <div className="program-page">
       <Header simple />
       <main className="program-main">
-        <Link to="/forum" className="back-button">← Назад</Link>
+        <div className="top-controls">
+          <Link to="/forum" className="back-button">← Назад</Link>
+          <PageNavigation sections={[
+            { id: 'general-info', title: 'Общая информация' },
+            { id: 'day-1', title: '16 августа' },
+            { id: 'day-2', title: '17 августа' },
+            { id: 'day-3', title: '18 августа' },
+            { id: 'day-4', title: '19 августа' }
+          ]} />
+        </div>
         <div className="protocol-title">
           <p>ПРОТОКОЛЬНАЯ ПРОГРАММА ПРЕБЫВАНИЯ</p>
           <p>ЧРЕЗВЫЧАЙНОГО И ПОЛНОМОЧНОГО ПОСЛА</p>
@@ -18,7 +28,7 @@ const Program = () => {
         </div>
 
         <div className="program-content">
-          <div className="program-section-top">
+          <div className="program-section-top" id="general-info">
             <div className="program-section">
               <h3>Место проведения</h3>
               <p><strong>Основные мероприятия:</strong> МВЦ «Казань Экспо», г. Казань</p>
@@ -48,7 +58,7 @@ const Program = () => {
             </div>
           </div>
 
-          <div className="program-day">
+          <div className="program-day" id="day-1">
             <h3>16 августа 2026 года (воскресенье)</h3>
             <h4>День прибытия и культурно-протокольная программа</h4>
             <div className="program-table">
@@ -115,7 +125,7 @@ const Program = () => {
             </div>
           </div>
 
-          <div className="program-day">
+          <div className="program-day" id="day-2">
             <h3>17 августа 2026 года (понедельник)</h3>
             <h4>Первый день деловой программы</h4>
             <div className="program-table">
@@ -227,7 +237,7 @@ const Program = () => {
             </div>
           </div>
 
-          <div className="program-day">
+          <div className="program-day" id="day-3">
             <h3>18 августа 2026 года (вторник)</h3>
             <h4>Второй день деловой программы форума</h4>
             <div className="program-table">
@@ -324,7 +334,7 @@ const Program = () => {
             </div>
           </div>
 
-          <div className="program-day">
+          <div className="program-day" id="day-4">
             <h3>19 августа 2026 года (среда)</h3>
             <h4>Выездная программа и отбытие</h4>
             <div className="program-table">

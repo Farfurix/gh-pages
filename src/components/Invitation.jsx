@@ -9,7 +9,9 @@ export default function Invitation() {
     <div className="invitation">
       <Header simple />
       <main className="invitation-main">
-        <Link to="/forum" className="back-button">← Назад</Link>
+        <div className="top-controls">
+          <Link to="/forum" className="back-button">← Назад</Link>
+        </div>
         <div className="invitation-container">
           <div className="invitation-content">
             <div className="invitation-paper">
@@ -28,7 +30,7 @@ export default function Invitation() {
               </div>
 
               <div className="paper-body">
-                <div className="recipient-block">
+                <div className="recipient-block" id="recipient">
                   <p className="recipient-title">Кому:</p>
                   <p className="recipient">Чрезвычайному и Полномочному Послу</p>
                   <p className="recipient">Китайской Народной Республики</p>
@@ -41,7 +43,7 @@ export default function Invitation() {
                   <p className="salutation">Уважаемый господин Посол!</p>
                 </div>
 
-                <div className="main-text">
+                <div className="main-text" id="main-text">
                   <p className="invitation-text">
                     Организационный комитет IV Международного форума «РОСТКИ: Россия
                     и Китай – взаимовыгодное сотрудничество» имеет честь пригласить Вас
@@ -62,7 +64,7 @@ export default function Invitation() {
                     костюм).
                   </p>
 
-                  <div className="delegation-block">
+                  <div className="delegation-block" id="delegation">
                     <p className="delegation-title">В составе официальной делегации Китайской Народной Республики приглашаются:</p>
                     <ol className="delegation-list">
                       <li>Чрезвычайный и Полномочный Посол КНР в Российской Федерации господин Чжан Ханьхуэй;</li>
@@ -91,7 +93,7 @@ export default function Invitation() {
                   </div>
                 </div>
 
-                <div className="signature-block">
+                <div className="signature-block" id="signature">
                   <p className="signature-closing">С уважением,</p>
                   <p className="signature-title">Председатель Организационного комитета</p>
                   <p className="signature-forum">IV Международного форума «РОСТКИ: Россия и Китай – взаимовыгодное сотрудничество»</p>

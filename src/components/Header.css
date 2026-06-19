@@ -13,14 +13,26 @@
 /* Simple header for Forum and Invitation pages */
 .header-simple {
   margin-bottom: 0;
-  border-bottom: 2px solid #3498db;
+  border-bottom: 2px solid var(--accent-blue);
+  background: var(--header-bg);
+}
+
+.header-simple .header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header-simple .header-controls {
+  justify-content: flex-end;
 }
 
 .header-title-simple {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #3498db;
+  color: var(--accent-blue);
   letter-spacing: 0.05em;
+  transition: color 0.4s ease;
 }
 
 .header-inner {

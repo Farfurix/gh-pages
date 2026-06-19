@@ -13,19 +13,28 @@ export default function Header({
 }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [dark, setDark] = useState(() => {
-    const saved = document.documentElement.getAttribute('data-theme')
+    // Проверяем сохраненную тему в localStorage
+    const saved = localStorage.getItem('theme')
     if (saved) return saved === 'dark'
-    return true
+    return false // По умолчанию светлая тема
   })
-  const [largeFont, setLargeFont] = useState(false)
+  const [largeFont, setLargeFont] = useState(() => {
+    // Проверяем сохраненный размер шрифта в localStorage
+    const saved = localStorage.getItem('fontScale')
+    return saved === 'large'
+  })
   const dropdownRef = useRef(null)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+    // Сохраняем тему в localStorage
+    localStorage.setItem('theme', dark ? 'dark' : 'light')
   }, [dark])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-font', largeFont ? 'large' : 'normal')
+    // Сохраняем размер шрифта в localStorage
+    localStorage.setItem('fontScale', largeFont ? 'large' : 'normal')
   }, [largeFont])
 
   useEffect(() => {
@@ -67,14 +76,46 @@ export default function Header({
       <header className="header header-simple">
         <div className="header-inner">
           <div className="header-top">
-            <div className="header-logo">
-              <svg width="32" height="32" viewBox="0 0 60 60" fill="none">
-                <rect width="60" height="60" rx="12" fill="#e74c3c"/>
-                <circle cx="30" cy="20" r="8" fill="#fff"/>
-                <path d="M15 45 Q30 35 45 45" stroke="#fff" strokeWidth="3" fill="none" strokeLinecap="round"/>
-              </svg>
+          </div>
+          <div className="header-controls">
+            <div className="header-controls-right">
+              {/* Font size toggle */}
+              <button
+                className="font-toggle"
+                onClick={() => setLargeFont((f) => !f)}
+                aria-label="Размер шрифта"
+              >
+                <span className={`font-letter ${largeFont ? '' : 'font-letter-active'}`}>а</span>
+                <span className={`font-letter ${largeFont ? 'font-letter-active' : ''}`}>А</span>
+              </button>
+
+              {/* Theme toggle */}
+              <button
+                className="theme-toggle"
+                onClick={() => setDark((d) => !d)}
+                aria-label="Переключить тему"
+              >
+                {dark ? (
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                    <g stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                      <line x1="10" y1="1" x2="10" y2="3"/>
+                      <line x1="10" y1="17" x2="10" y2="19"/>
+                      <line x1="1" y1="10" x2="3" y2="10"/>
+                      <line x1="17" y1="10" x2="19" y2="10"/>
+                      <line x1="3.64" y1="3.64" x2="5.05" y2="5.05"/>
+                      <line x1="14.95" y1="14.95" x2="16.36" y2="16.36"/>
+                      <line x1="3.64" y1="16.36" x2="5.05" y2="14.95"/>
+                      <line x1="14.95" y1="5.05" x2="16.36" y2="3.64"/>
+                    </g>
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2a8 8 0 1 0 8 8c0-.35-.02-.69-.07-1.02A6.5 6.5 0 0 1 9.02 2.07c-.33-.05-.67-.07-1.02-.07Z" fill="currentColor"/>
+                  </svg>
+                )}
+              </button>
             </div>
-            <h1 className="header-title header-title-simple">Форум Россия-Китай</h1>
           </div>
         </div>
       </header>
